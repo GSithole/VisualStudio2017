@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <script src="Scripts/jquery-1.10.2.js"></script>
+    <script type="text/javascript">
+        
+        $(document).ready(function () {
+
+            var apiurl = "http://localhost:49432/api/Contacts/";
+            var table = '<table>';
+
+            $('#btn').click(function () {
+                $.ajax({
+                    type: 'GET',
+                    url: apiurl,
+                    
+                    success: function (data) {
+                        table =  '<tr><td>' + 'Contact ID' + '</td><td>' + 'FirstName' + '</td> <td>' + 'LastName' + '</td><td>' + 'Gender' + '</td><td>' + 'PhoneNumber' + '</td><td>' + 'EmailAddress' + '</td><td>' + 'City' + '</td><td>'  +  'EditContact' + 
+                             '</td></tr>';
+                        $.each(data, function (idex, item) {
+
+                            table += '<tr><td>' + item.ID + '</td><td>' + item.firstName + '</td> <td>' + item.lastName + '</td><td>' + item.gender + '</td><td>' + item.phoneNumber + '</td><td>' + item.emailAddress + '</td><td>' + item.city +  '</td><td>' + '<a href="EditContact.html?id=' + item.ID + '">' + 'Edit' + '</a>' +
+                             '</td></tr><br/>';
+
+                        });
+                        table += '</table>';
+                        $('#ull').append(table)
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <input id="btn" type="button" value="getContact" />
+
+    <table id="tEmp"></table>
+    <div id="ull"></div>
+</body>
+</html>

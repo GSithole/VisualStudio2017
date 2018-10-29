@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Lodunga Technical" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="LodungaWebsite._Default" %>
+﻿<%@ Page Title="Lodunga Technical" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="LodungaWebsite._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
    <br /><br />

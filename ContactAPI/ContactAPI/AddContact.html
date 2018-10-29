@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script type="text/javascript">
+        var person = {
+            firstName: $('#frstname').val(),
+            lastName: $('#lstname').val(),
+            phoneNumber: $('#phnnumber').val(),
+            emailAddress: $('#email').val(),
+            city: $('#cty').val()
+        };
+        $(Document).ready(function () {
+            var apiurl = "http://localhost:49432/api/Contacts/";
+            $.ajax({
+                url: apiurl,
+                type: 'POST',
+                contentType:
+                    "application/json;charset=utf-8",
+                data: JSON.stringify(person),
+                success: function (person) {
+                    alert("Successfully added...");
+                },
+        });
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>First name:</td>
+            <td><input id="frstname" type="text" name="fname" /></td>
+        </tr>
+        <tr>
+            <td>Last name:</td>
+            <td><input id="lstname" type="text" name="lname" /></td>
+        </tr>
+        <tr>
+            <td>PhoneNumber:</td>
+            <td><input id="phnnumber" type="text" name="Pnumber" /></td>
+        </tr>
+        <tr>
+            <td> EmailAddress:</td>
+            <td><input id="email" type="text" name="Emailaddress" /></td>
+        </tr>
+        <tr>
+            <td>city: </td>
+            <td><input id="cty" type="text" name="city" /></td>
+        </tr>
+
+    </table>
+
+    <input type="submit" value="Submit">
+</body>
+</html>
