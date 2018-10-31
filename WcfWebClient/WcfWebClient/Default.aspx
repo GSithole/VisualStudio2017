@@ -11,7 +11,11 @@
         <div>
             <asp:GridView ID="GridView1" runat="server" >
             </asp:GridView>
-
+            <br />
+            <asp:HyperLink ID="Creat" runat="server" NavigateUrl="~/AddContact.aspx">Create new Contact</asp:HyperLink>
+            <br />
+            <br />
+            <table id="tableContent" border="1" runat="server"></table>
         </div>
     </form>
 </body>

@@ -9,178 +9,41 @@
 //------------------------------------------------------------------------------
 
 namespace WcfWebClient.CrudService {
-    using System.Runtime.Serialization;
-    using System;
     
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Contact", Namespace="http://schemas.datacontract.org/2004/07/ContactClassLibrary")]
-    [System.SerializableAttribute()]
-    public partial class Contact : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string cityField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string emailAddressField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string firstNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string genderField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string lastNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string phoneNumberField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ID {
-            get {
-                return this.IDField;
-            }
-            set {
-                if ((this.IDField.Equals(value) != true)) {
-                    this.IDField = value;
-                    this.RaisePropertyChanged("ID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string city {
-            get {
-                return this.cityField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.cityField, value) != true)) {
-                    this.cityField = value;
-                    this.RaisePropertyChanged("city");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string emailAddress {
-            get {
-                return this.emailAddressField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.emailAddressField, value) != true)) {
-                    this.emailAddressField = value;
-                    this.RaisePropertyChanged("emailAddress");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string firstName {
-            get {
-                return this.firstNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.firstNameField, value) != true)) {
-                    this.firstNameField = value;
-                    this.RaisePropertyChanged("firstName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string gender {
-            get {
-                return this.genderField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.genderField, value) != true)) {
-                    this.genderField = value;
-                    this.RaisePropertyChanged("gender");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string lastName {
-            get {
-                return this.lastNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.lastNameField, value) != true)) {
-                    this.lastNameField = value;
-                    this.RaisePropertyChanged("lastName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string phoneNumber {
-            get {
-                return this.phoneNumberField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.phoneNumberField, value) != true)) {
-                    this.phoneNumberField = value;
-                    this.RaisePropertyChanged("phoneNumber");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="CrudService.IService1")]
     public interface IService1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getContacts", ReplyAction="http://tempuri.org/IService1/getContactsResponse")]
-        WcfWebClient.CrudService.Contact[] getContacts();
+        ContactClassLibrary.Contact[] getContacts();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/getContacts", ReplyAction="http://tempuri.org/IService1/getContactsResponse")]
-        System.Threading.Tasks.Task<WcfWebClient.CrudService.Contact[]> getContactsAsync();
+        System.Threading.Tasks.Task<ContactClassLibrary.Contact[]> getContactsAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Details", ReplyAction="http://tempuri.org/IService1/DetailsResponse")]
-        WcfWebClient.CrudService.Contact Details(int id);
+        ContactClassLibrary.Contact Details(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Details", ReplyAction="http://tempuri.org/IService1/DetailsResponse")]
-        System.Threading.Tasks.Task<WcfWebClient.CrudService.Contact> DetailsAsync(int id);
+        System.Threading.Tasks.Task<ContactClassLibrary.Contact> DetailsAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/edit", ReplyAction="http://tempuri.org/IService1/editResponse")]
-        void edit(int id, WcfWebClient.CrudService.Contact contact);
+        void edit(int id, ContactClassLibrary.Contact contact);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/edit", ReplyAction="http://tempuri.org/IService1/editResponse")]
-        System.Threading.Tasks.Task editAsync(int id, WcfWebClient.CrudService.Contact contact);
+        System.Threading.Tasks.Task editAsync(int id, ContactClassLibrary.Contact contact);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/delete", ReplyAction="http://tempuri.org/IService1/deleteResponse")]
         void delete(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/delete", ReplyAction="http://tempuri.org/IService1/deleteResponse")]
         System.Threading.Tasks.Task deleteAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/createContact", ReplyAction="http://tempuri.org/IService1/createContactResponse")]
+        void createContact(ContactClassLibrary.Contact contact);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/createContact", ReplyAction="http://tempuri.org/IService1/createContactResponse")]
+        System.Threading.Tasks.Task createContactAsync(ContactClassLibrary.Contact contact);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -210,27 +73,27 @@ namespace WcfWebClient.CrudService {
                 base(binding, remoteAddress) {
         }
         
-        public WcfWebClient.CrudService.Contact[] getContacts() {
+        public ContactClassLibrary.Contact[] getContacts() {
             return base.Channel.getContacts();
         }
         
-        public System.Threading.Tasks.Task<WcfWebClient.CrudService.Contact[]> getContactsAsync() {
+        public System.Threading.Tasks.Task<ContactClassLibrary.Contact[]> getContactsAsync() {
             return base.Channel.getContactsAsync();
         }
         
-        public WcfWebClient.CrudService.Contact Details(int id) {
+        public ContactClassLibrary.Contact Details(int id) {
             return base.Channel.Details(id);
         }
         
-        public System.Threading.Tasks.Task<WcfWebClient.CrudService.Contact> DetailsAsync(int id) {
+        public System.Threading.Tasks.Task<ContactClassLibrary.Contact> DetailsAsync(int id) {
             return base.Channel.DetailsAsync(id);
         }
         
-        public void edit(int id, WcfWebClient.CrudService.Contact contact) {
+        public void edit(int id, ContactClassLibrary.Contact contact) {
             base.Channel.edit(id, contact);
         }
         
-        public System.Threading.Tasks.Task editAsync(int id, WcfWebClient.CrudService.Contact contact) {
+        public System.Threading.Tasks.Task editAsync(int id, ContactClassLibrary.Contact contact) {
             return base.Channel.editAsync(id, contact);
         }
         
@@ -240,6 +103,14 @@ namespace WcfWebClient.CrudService {
         
         public System.Threading.Tasks.Task deleteAsync(int id) {
             return base.Channel.deleteAsync(id);
+        }
+        
+        public void createContact(ContactClassLibrary.Contact contact) {
+            base.Channel.createContact(contact);
+        }
+        
+        public System.Threading.Tasks.Task createContactAsync(ContactClassLibrary.Contact contact) {
+            return base.Channel.createContactAsync(contact);
         }
     }
 }

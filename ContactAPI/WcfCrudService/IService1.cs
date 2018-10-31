@@ -22,6 +22,7 @@ namespace WcfCrudService
         void edit(int id, ContactClassLibrary.Contact contact);
         [OperationContract]
         void delete(int id);
+        [OperationContract]
         void createContact(ContactClassLibrary.Contact contact);
     }
     
